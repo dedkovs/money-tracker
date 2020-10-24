@@ -46,12 +46,14 @@ const Menu1 = inject('store')(
 				<MenuItem
 					classes={{ root: classes.menuItem }}
 					onClick={() => {
+						store.setOpenDialogRemoveWallet(false);
 						store.setOpenDialogRenameWallet(false);
 						store.setAnchorEl2(null);
+						store.setOpenBetweenWalletsForm(true);
 						// store.setOpenEditWalletsForm(true);
 					}}
-					// component={Link}
-					// to="/data/edit-wallets"
+					component={Link}
+					to="/data/between-wallets"
 				>
 					Перевести в другой кошелёк
 					{/* Перевести в другой кошелёк */}

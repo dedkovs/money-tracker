@@ -405,6 +405,11 @@ class Store {
 		this.openTransactionForm = value;
 	};
 
+	@observable openBetweenWalletsForm = false;
+	@action setOpenBetweenWalletsForm = (value) => {
+		this.openBetweenWalletsForm = value;
+	};
+
 	@observable openEditTransactionForm = false;
 	@action setOpenEditTransactionForm = (value) => {
 		this.openEditTransactionForm = value;

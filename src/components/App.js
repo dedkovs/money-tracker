@@ -11,6 +11,7 @@ import EditWalletsForm from './EditWalletsForm/EditWalletsForm';
 import { inject, observer } from 'mobx-react';
 // import DialogRenameWallet from './EditWalletsForm/DialogRenameWallet';
 import { toJS } from 'mobx';
+import BetweenWalletsForm from './BetweenWalletsForm/BetweenWalletsForm';
 
 const App = inject('store')(
 	observer(({ store }) => {
@@ -80,6 +81,22 @@ const App = inject('store')(
 								<>
 									<Data />
 									<TransactionForm />
+								</>
+							) : (
+								<Redirect to="/" />
+							);
+						}}
+					/>
+					<Route
+						exact
+						path="/data/between-wallets"
+						render={() => {
+							store.setOpenBetweenWalletsForm(true);
+							store.setOpenDrawer(false);
+							return store.authenticated === true ? (
+								<>
+									<Data />
+									<BetweenWalletsForm />
 								</>
 							) : (
 								<Redirect to="/" />
