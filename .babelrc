@@ -1,0 +1,19 @@
+{
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"corejs": 3,
+				"useBuiltIns": "usage",
+				"debug": false,
+				"modules": false
+			}
+		],
+		"@babel/react"
+	],
+	"plugins": [
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		["@babel/plugin-proposal-class-properties", { "loose": true }],
+		"babel-plugin-styled-components"
+	]
+}
